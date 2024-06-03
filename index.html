@@ -1,109 +1,178 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kalkulator</title>
-  <style>
-    body {
-      font-family: sans-serif;
-      margin: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      background-color: #f2f2f2;
-    }
-
-    .calculator {
-      width: 280px;
-      height: 425px;
-      background-color: #333;
-      border-radius: 10px;
-      padding: 15px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    }
-
-    h1 {
-      text-align: center;
-      font-size: 2em;
-      color: #fff;
-      margin-bottom: 15px;
-    }
-
-    input[type="text"],
-    input[type="button"] {
-      width: 64px;
-      height: 65px;
-      font-size: 24px;
-      border-radius: 8px;
-      font-weight: bold;
-      text-align: center;
-      cursor: pointer;
-      background-color: #eee;
-      border: none;
-      margin: 5px;
-    }
-
-    input[type="text"] {
-      background-color: #ddd;
-    }
-
-    #hasil, #nol {
-      width: 98px;
-    }
-
-    #github {
-      width: 70px;
-      background-color: #ccc;
-      border: 1px solid #ddd;
-    }
-
-    .calculator br {
-      clear: both;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>kalkulator</title>
+    <link rel="stylesheet" href="kalkulator.css">
+    <link rel="icon"href="dijob_store icon.png"
 </head>
 <body>
-  <h1 data-text="Kalkulator">Kalkulator</h1>
+    <h1 data-text="kalkulator">kalkulator</h1>
+    
+</body>
+</html>
+    <style>
+        .calculator {
+            width: 280px;
+            height: 425px;
+            margin:  auto;
+           padding:10px;
+           
+            background-color: rgb(34, 32, 32);
+        }
+        input[type="text"], input[type="button"] {
+            width: 64px;
+            height: 65px;
+            font-size: 35px;
+            border-radius: 8px;
+            font-weight: 900;
+            text-align: center;
+            border-top:2px solid rgb(34, 32, 32);
+            border-right: 2px solid rgb(34, 32, 32);
+             border-left: 2px solid rgb(34, 32, 32);
+             border-bottom: 2px solid rgb(34, 32, 32);
+             
+             
 
-  <div class="calculator">
-    <input type="text" placeholder="Input dan output di sini" id="display">
-    <br>
 
-    <input type="button" id="ce" value="CE" onclick="backspace()">
-    <input type="button" id="bagi" value="/" onclick="addToDisplay('/')">
-    <input type="button" id="x" value="X" onclick="addToDisplay('*')">
-    <input type="button" id="github" value="GitHub" onclick="addToDisplay('yameteeeehhhhh')">
-    <br>
+        }
+        #hasil{
+            width: 98px;
+            background-color: red;
+        }
+        #nol{
+            width:100px;
+        }
+        #github{
+            width:70px;
+            border-top: rgb(47, 45, 45);
+            border-left: black;
+            border-right: rgb(47, 45, 45);
+            border-bottom: rgb(47, 45, 45);
+            font-size: 16px;
+            text-align: left;
+            font-family:sans-serif;
+            font-weight: 800;
+        }
+        #ce{
+            background-color: rgb(136, 127, 127);
+            width: 21%;
+            
+            
+        }
+        #bagi{
+            background-color: rgb(136, 127, 127);
 
-    <input type="button" value="7" onclick="addToDisplay('7')">
-    <input type="button" value="8" onclick="addToDisplay('8')">
-    <input type="button" value="9" onclick="addToDisplay('9')">
-    <input type="button" id="c" value="C" onclick="clearDisplay()">
-    <br>
+        }
+        #c{
+            background-color: rgb(136, 127, 127);
+            font-weight: 900;
+        }
+        #x{
+            background-color: rgb(136, 127, 127);
+        }
+        #minus{
+            background-color: rgb(136, 127, 127);
+        }
+        #plus{
+            background-color: rgb(136, 127, 127);
+        }
+    input{
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 5px;
+            text-align: center;
+            color: rgb(3, 3, 3);
+        }
+        h1{
+    position:relative;
+    font-size: 10vw;
+    color: #f2f2f3;
+    -webkit-text-stroke: 0.3vw #f2fa0f;
+    text-transform: uppercase;
+    font-family:Georgia, 'Times New Roman', Times, serif
 
-    <input type="button" value="4" onclick="addToDisplay('4')">
-    <input type="button" value="5" onclick="addToDisplay('5')">
-    <input type="button" value="6" onclick="addToDisplay('6')">
-    <input type="button" id="minus" value="-" onclick="addToDisplay('-')">
-    <br>
+}
+h1{
+    text-align:center;
+}
+        
+        h1::before{
+    content:attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 95%;
+    color: #0b0b0b;
+    -webkit-text-stroke: 0vw #30b9f3;
+    border-right: 2px solid #08010100;
+    overflow:hidden;
+    animation: animate 6s linear infinite;
+    
+}
+::-webkit-input-placeholder{
+    color: white;
+}
 
-    <input type="button" value="1" onclick="addToDisplay('1')">
-    <input type="button" value="2" onclick="addToDisplay('2')">
-    <input type="button" value="3" onclick="addToDisplay('3')">
-    <input type="button" id="plus" value="+" onclick="addToDisplay('+')">
-    <br>
+</style>
+</head>
+<body>
+    
+    <div class="calculator">
+        <input placeholder="input and output here"  id="display">
+        <br>
+        <input type="button" id="ce" value="CE" onclick="backspace()">
+        <input type="button"id="bagi" value="/" onclick="addToDisplay('/')">
+        <input type="button" id="x"value="X" onclick="addToDisplay('*')">
+        <input type="button"id="github" value="GitHub" onclick="addToDisplay('yameteeeehhhhhh')">
+        <br>
+        <input type="button" value="7" onclick="addToDisplay('7')">
+        <input type="button" value="8" onclick="addToDisplay('8')">
+        <input type="button" value="9" onclick="addToDisplay('9')">
+        <input type="button"id="c" value="C" onclick="clearDisplay('C')">
+        <br>
+        <input type="button" value="4" onclick="addToDisplay('4')">
+        <input type="button" value="5" onclick="addToDisplay('5')">
+        <input type="button" value="6" onclick="addToDisplay('6')">
+        <input type="button"id="minus" value="-" onclick="addToDisplay('-')">
+        <br>
+        <input type="button" value="1" onclick="addToDisplay('1')">
+        <input type="button" value="2" onclick="addToDisplay('2')">
+        <input type="button" value="3" onclick="addToDisplay('3')">
+        <input type="button"id="plus" value="+" onclick="addToDisplay('+')">
+        <br>
+        <input type="button" id="nol" value="0" onclick="addToDisplay('0')">
+        <input type="button" value="." onclick="addToDisplay('.')">
+        <input type="button" id="hasil" value="=" onclick="calculate()">
+        
+    </div>
 
-    <input type="button" id="nol" value="0" onclick="addToDisplay('0')">
-    <input type="button" value="." onclick="addToDisplay('.')">
-    <input type="button" id="hasil" value="=" onclick="calculate()">
-  </div>
+    <script>
+        function addToDisplay(value) {
+            document.getElementById('display').value += value;
+        }
 
-  <script>
-    function addToDisplay(value) {
-      document.getElementById('display').value += value;
-    }
+        function clearDisplay() {
+            document.getElementById('display').value = '';
+        }
 
-    function clearDisplay() {
-      document.
+        function calculate() {
+            try {
+                var result = eval(document.getElementById('display').value);
+                document.getElementById('display').value = result;
+            } catch (error) {
+                document.getElementById('display').value = 'masukin yang bener woi';
+            }
+        }
+        var display = document.getElementById("display")
+
+        function backspace () {
+            display.value = display.value.slice(0,-1)
+        }
+
+       
+        
+    </script>
+</body>
+</html>
