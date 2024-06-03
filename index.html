@@ -3,40 +3,101 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>kalkulator</title>
-  <link rel="stylesheet" href="kalkulator.css">
-  <link rel="icon" href="dijob_store_icon.png">
+  <title>Kalkulator</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-color: #f2f2f2;
+    }
+
+    .calculator {
+      width: 280px;
+      height: 425px;
+      background-color: #333;
+      border-radius: 10px;
+      padding: 15px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 2em;
+      color: #fff;
+      margin-bottom: 15px;
+    }
+
+    input[type="text"],
+    input[type="button"] {
+      width: 64px;
+      height: 65px;
+      font-size: 24px;
+      border-radius: 8px;
+      font-weight: bold;
+      text-align: center;
+      cursor: pointer;
+      background-color: #eee;
+      border: none;
+      margin: 5px;
+    }
+
+    input[type="text"] {
+      background-color: #ddd;
+    }
+
+    #hasil, #nol {
+      width: 98px;
+    }
+
+    #github {
+      width: 70px;
+      background-color: #ccc;
+      border: 1px solid #ddd;
+    }
+
+    .calculator br {
+      clear: both;
+    }
+  </style>
 </head>
 <body>
-  <h1 data-text="kalkulator">kalkulator</h1>
+  <h1 data-text="Kalkulator">Kalkulator</h1>
 
   <div class="calculator">
-    <input type="text" placeholder="input and output here" id="display">
+    <input type="text" placeholder="Input dan output di sini" id="display">
     <br>
+
     <input type="button" id="ce" value="CE" onclick="backspace()">
     <input type="button" id="bagi" value="/" onclick="addToDisplay('/')">
     <input type="button" id="x" value="X" onclick="addToDisplay('*')">
-    <input type="button" id="github" value="GitHub" onclick="window.location.href='https://github.com/Djob-misael-m'">
+    <input type="button" id="github" value="GitHub" onclick="addToDisplay('yameteeeehhhhh')">
     <br>
+
     <input type="button" value="7" onclick="addToDisplay('7')">
     <input type="button" value="8" onclick="addToDisplay('8')">
     <input type="button" value="9" onclick="addToDisplay('9')">
-    <input type="button" id="c" value="C" onclick="clearDisplay('C')">
+    <input type="button" id="c" value="C" onclick="clearDisplay()">
     <br>
+
     <input type="button" value="4" onclick="addToDisplay('4')">
     <input type="button" value="5" onclick="addToDisplay('5')">
     <input type="button" value="6" onclick="addToDisplay('6')">
     <input type="button" id="minus" value="-" onclick="addToDisplay('-')">
     <br>
+
     <input type="button" value="1" onclick="addToDisplay('1')">
     <input type="button" value="2" onclick="addToDisplay('2')">
     <input type="button" value="3" onclick="addToDisplay('3')">
     <input type="button" id="plus" value="+" onclick="addToDisplay('+')">
     <br>
+
     <input type="button" id="nol" value="0" onclick="addToDisplay('0')">
     <input type="button" value="." onclick="addToDisplay('.')">
     <input type="button" id="hasil" value="=" onclick="calculate()">
-
   </div>
 
   <script>
@@ -45,23 +106,4 @@
     }
 
     function clearDisplay() {
-      document.getElementById('display').value = '';
-    }
-
-    function calculate() {
-      try {
-        var result = eval(document.getElementById('display').value);
-        document.getElementById('display').value = result;
-      } catch (error) {
-        document.getElementById('display').value = 'masukkan yang benar woi';
-      }
-    }
-
-    var display = document.getElementById("display")
-
-    function backspace () {
-      display.value = display.value.slice(0,-1)
-    }
-  </script>
-</body>
-</html>
+      document.
