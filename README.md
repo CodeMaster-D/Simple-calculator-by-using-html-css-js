@@ -1,3 +1,2 @@
-# simple calculator by using html-css
- for beginner #1
+# calculator using html css and js #1
  
